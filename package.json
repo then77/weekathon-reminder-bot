@@ -12,5 +12,11 @@
 		"@types/node": "^26.2.0",
 		"typescript": "^5.5.2",
 		"wrangler": "^4.123.0"
+	},
+	"dependencies": {
+		"@discordjs/rest": "^2.6.3",
+		"discord-api-types": "^0.38.53",
+		"discord-interactions": "^4.4.0",
+		"ky": "^2.0.2"
 	}
 }
