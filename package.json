@@ -1,28 +1,39 @@
 {
-  "name": "weekathon-reminder-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.10.0",
-      "onFail": "download"
+    "name": "weekathon-reminder-bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "drizzle-kit migrate",
+        "db:studio": "drizzle-kit studio"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devEngines": {
+        "packageManager": {
+            "name": "pnpm",
+            "version": "^11.10.0",
+            "onFail": "download"
+        }
+    },
+    "type": "module",
+    "devDependencies": {
+        "@types/node": "^26.2.0",
+        "drizzle-kit": "^0.31.10",
+        "typescript": "^7.0.2",
+        "vercel": "^59.4.0"
+    },
+    "dependencies": {
+        "@discordjs/builders": "^1.14.1",
+        "@discordjs/rest": "^2.6.3",
+        "@neondatabase/serverless": "^1.1.0",
+        "@vercel/node": "^7.0.0",
+        "discord-api-types": "^0.38.53",
+        "discord-http-slash": "^0.1.1",
+        "discord-interactions": "^4.4.0",
+        "drizzle-orm": "^0.45.2"
     }
-  },
-  "type": "module",
-  "devDependencies": {
-    "@types/node": "^26.2.0",
-    "typescript": "^7.0.2",
-    "vercel": "^59.4.0"
-  },
-  "dependencies": {
-    "@vercel/node": "^7.0.0"
-  }
 }
