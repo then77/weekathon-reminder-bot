@@ -1,22 +1,28 @@
 {
-	"name": "weekathon-reminder-bot",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev --test-scheduled",
-		"start": "wrangler dev --test-scheduled",
-		"cf-typegen": "wrangler types"
-	},
-	"devDependencies": {
-		"@types/node": "^26.2.0",
-		"typescript": "^5.5.2",
-		"wrangler": "^4.123.0"
-	},
-	"dependencies": {
-		"@discordjs/rest": "^2.6.3",
-		"discord-api-types": "^0.38.53",
-		"discord-interactions": "^4.4.0",
-		"ky": "^2.0.2"
-	}
+  "name": "weekathon-reminder-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.10.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2",
+    "vercel": "^59.4.0"
+  },
+  "dependencies": {
+    "@vercel/node": "^7.0.0"
+  }
 }

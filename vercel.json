@@ -1,0 +1,15 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "cleanUrls": true,
+    "fluid": true,
+    "rewrites": [
+        {
+            "source": "/invite",
+            "destination": "/api/invite"
+        },
+        {
+            "source": "/callback",
+            "destination": "/api/callback"
+        }
+    ]
+}
