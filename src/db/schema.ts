@@ -58,7 +58,10 @@ export const activeWeeks = pgTable(
             table.startTime,
             table.endTime,
         ),
-        index("active_weeks_user_finished_idx").on(table.userId, table.finishedAt),
+        index("active_weeks_user_finished_idx").on(
+            table.userId,
+            table.finishedAt,
+        ),
     ],
 );
 export type ActiveWeek = typeof activeWeeks.$inferSelect;
