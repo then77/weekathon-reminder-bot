@@ -1,6 +1,23 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+async function handle404() {
+    try {
+        const html = await readFile(
+            path.join(process.cwd(), "public", "404.html"),
+            "utf8",
+        );
+        return new Response(html, {
+            status: 404,
+            headers: {
+                "Content-Type": "text/html; charset=utf-8",
+            },
+        });
+    } catch {
+        return new Response(null, { status: 404 });
+    }
+}
+
 async function handlePage(
     requestUrl: string,
     result: true | string,
@@ -56,12 +73,12 @@ async function handlePage(
 }
 
 export const fetch = async (request: Request): Promise<Response> => {
-    // Reject non get request
-    if (request.method !== "GET")
-        return handlePage(
-            request.url,
-            "Request is not valid. Please try again.",
-        );
+    // Check if request not from /callback or not get.
+    if (
+        new URL(request.url).pathname != "/callback" ||
+        request.method !== "GET"
+    )
+        return handle404();
 
     // Get code and state from query params
     const url = new URL(request.url);
